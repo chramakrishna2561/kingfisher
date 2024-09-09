@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carousel Component</title>
+
+  <!-- Include the client library for CSS and JS -->
+  <sly data-sly-use.clientlib="${'clientlibs'}"></sly>
+</head>
+<body>
+
+  <div class="carousel">
+    <!-- Carousel slides -->
+    <div class="slides">
+      <div class="slide">
+        <img src="/content/dam/yourproject/path-to-image1.jpg" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="/content/dam/yourproject/path-to-image2.jpg" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="/content/dam/yourproject/path-to-image3.jpg" alt="Slide 3">
+      </div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+    <!-- Dots (Indicators) -->
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    let slideInterval;
+
+    // Function to move the slide
+    function moveSlide(n) {
+      showSlide(currentIndex += n);
+    }
+
+    // Function to show the current slide based on dot or buttons
+    function currentSlide(n) {
+      showSlide(currentIndex = n - 1);
+    }
+
+    // Function to display the slide
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+
+      if (n >= slides.length) {
+        currentIndex = 0;
+      }
+      if (n < 0) {
+        currentIndex = slides.length - 1;
+      }
+
+      slides.forEach(slide => slide.style.display = 'none');
+      dots.forEach(dot => dot.classList.remove('active-dot'));
+
+      slides[currentIndex].style.display = 'block';
+      dots[currentIndex].classList.add('active-dot');
+    }
+
+    // Initialize the carousel with the first slide visible
+    function startCarousel() {
+      showSlide(currentIndex);
+      slideInterval = setInterval(function() {
+        moveSlide(1);
+      }, 5000); // Slide every 5 seconds
+    }
+
+    // Start the carousel
+    startCarousel();
+  </script>
+</body>
+</html>

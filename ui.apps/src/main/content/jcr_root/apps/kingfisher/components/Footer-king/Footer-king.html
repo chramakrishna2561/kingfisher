@@ -1,0 +1,119 @@
+<footer class="footer">
+    <div class="footer-social">
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="/content/dam/kingfisher-project/png-transparent-facebook-logo-logo-facebook-icon-facebook-logo-brand-social-network-scalable-vector-graphics.png" alt="">
+                <span></span>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="/content/dam/kingfisher-project/11376491.png" alt="">
+                <span></span>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+                <img src="/content/dam/kingfisher-project/instagram-social-media-icon-3d_1089142-18897.avif" alt="">
+                <span></span>
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="/content/dam/kingfisher-project/1000_F_546782398_26V3pL84dJYL7ovgIIIjcDJ7IhPUDxSA.jpg" alt="">
+                <span></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer-logo-container">
+        <img src="/content/dam/kingfisher-project/openart-image_bPHWo2eY_1725195004483_raw.jpg" alt="Footer Logo" class="footer-logo">
+    </div>
+
+    <nav class="footer-navigation">
+        <div data-sly-use.footer="com.kingfisher.core.models.Footer">
+            <ul>
+                <sly data-sly-list="${footer.foot}">
+                    <li>
+                        <a href="${item.foot_tablink}.html">${item.foot_tab}</a>
+                    </li>
+                </sly>
+            </ul>
+        </div>
+    </nav>
+</footer>
+
+<style>
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Allows positioning of social icons */
+}
+
+.footer-social {
+    position: absolute;
+    top: 20px; /* Adjust the position from the top */
+    right: 20px; /* Adjust the position from the right */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-social .social-icons {
+    display: flex;
+}
+
+.footer-social .social-icons a {
+    margin-left: 15px; /* Adds spacing between icons */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer-social .social-icons img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.footer-logo-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 50px; /* Adds space between social icons and logo */
+}
+
+.footer-logo {
+    width: 300px;
+    height: auto;
+}
+
+.footer-navigation ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    gap: 2.5cm; /* Horizontal space between tabs */
+}
+
+.footer-navigation ul li {
+    flex: 1 1 calc(20% - 2.5cm); /* Width to fit 5 items per line with gap accounted */
+    margin-bottom: 1.5cm; /* Space between rows of tabs set to 1.5 cm */
+    text-align: center;
+    padding: 10px 0;
+    font-size: 19px;
+    box-sizing: border-box;
+}
+
+.footer-navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-navigation ul li a:hover {
+    text-decoration: underline;
+}
+</style>

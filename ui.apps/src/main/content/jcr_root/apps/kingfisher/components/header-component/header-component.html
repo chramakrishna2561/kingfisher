@@ -1,0 +1,105 @@
+<header class="header-container">
+    <div class="header-left">
+        <div class="header-logo-title">
+            <img src="/content/dam/kingfisher-project/kingfisher-logo-brand-feather_989332-2191.avif" alt="Kingfisher Logo" class="logo-size" />
+            <span class="header-title">Kingmaker</span>
+        </div>
+        <nav class="header-navigation">
+            <div data-sly-use.header="com.kingfisher.core.models.Header">
+                <ul>
+                    <sly data-sly-list="${header.hat}">
+                        <li>
+                            <a href="${item.tablink}.html">${item.tab}</a>
+                        </li>
+                    </sly>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="header-search">
+        <input type="text" placeholder="Search..." class="search-input" />
+        <button class="search-button">Search</button>
+    </div>
+</header>
+<style>
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000; 
+    border-bottom: 1px solid #ddd;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo-title {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-size {
+    width: 2cm;
+    height: 2cm;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; 
+    margin-right: 30px;
+}
+
+.header-navigation ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-navigation li {
+    margin-right: 20px;
+}
+
+.header-navigation a {
+    text-decoration: none;
+    color: #fff; 
+    font-weight: 500;
+}
+
+.header-navigation a:hover {
+    color: #007bff;
+}
+
+.header-search {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff; 
+    border-radius: 4px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+</style>

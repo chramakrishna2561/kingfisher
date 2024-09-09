@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/kingfisher/clientlibs"/>
+    <filter root="/apps/kingfisher/components"/>
+    <filter root="/apps/kingfisher/i18n"/>
+</workspaceFilter>

@@ -1,0 +1,9 @@
+
+<div class="pagination">
+    <ul>
+        <li><a href="?page=1">1</a></li>
+        <li><a href="?page=2">2</a></li>
+        <li><a href="?page=3">3</a></li>
+        <!-- Add logic to generate pagination links dynamically -->
+    </ul>
+</div>
